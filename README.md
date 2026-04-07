@@ -13,22 +13,22 @@ Farmers and agricultural workers often struggle with timely and accurate identif
 The project uses a PyTorch deep learning pipeline (based off ResNet-18) configured for image classification to detect crop diseases (like potato fungal, tomato bacterial, etc.). Furthermore, an intelligent heuristic engine combines the AI's confidence scores with live meteorological data (like humidity and temperature) to refine predictions—for instance, aggressively flagging bacterial infections when high humidity and specific temperatures converge.
 
 ## Proof of Google AI Usage
-Attach screenshots in a `/proof` folder:
-
-```
-/proof
-  - ai_usage_1.png
-  - ai_usage_2.png
-```
+All AI usage screenshots have been placed in the `/ai proof` folder.
+*Here are the AI usage proof images:*
+![AI Proof 1](ai%20proof/Screenshot%202026-04-07%20062408.png)
+![AI Proof 2](ai%20proof/Screenshot%202026-04-07%20062509.png)
 
 ## Screenshots
-Add project screenshots:
-*(Add your UI screenshots here)*
+All UI design screenshots are in the `/projectss` folder of this repository.
+
+*Here is a preview of the application from the projectss folder:*
+![Screenshot 1](projectss/Screenshot%202026-04-07%20062235.png)
+![Screenshot 2](projectss/Screenshot%202026-04-07%20062247.png)
+![Screenshot 3](projectss/Screenshot%202026-04-07%20062257.png)
 
 ## Demo Video
 Upload your demo video to Google Drive and paste the shareable link here(max 3 minutes). 
-[Watch Demo](INSERT_GOOGLE_DRIVE_LINK_HERE)
-
+[Watch Demo Video Here](https://drive.google.com/file/d/1wvbU1fT3DCRWfu4ijRKJ6qgG5k3K9NmB/view?usp=drive_link)
 ## Installation Steps
 ```bash
 # 1. Clone the repository
