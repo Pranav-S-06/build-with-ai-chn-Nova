@@ -12,11 +12,22 @@ Farmers and agricultural workers often struggle with timely and accurate identif
 **How AI is Integrated:**
 The project uses a PyTorch deep learning pipeline (based off ResNet-18) configured for image classification to detect crop diseases (like potato fungal, tomato bacterial, etc.). Furthermore, an intelligent heuristic engine combines the AI's confidence scores with live meteorological data (like humidity and temperature) to refine predictions—for instance, aggressively flagging bacterial infections when high humidity and specific temperatures converge.
 
+## Proof of Google AI Usage
+Attach screenshots in a `/proof` folder:
 
+```
+/proof
+  - ai_usage_1.png
+  - ai_usage_2.png
+```
 
+## Screenshots
+Add project screenshots:
+*(Add your UI screenshots here)*
 
-
-
+## Demo Video
+Upload your demo video to Google Drive and paste the shareable link here(max 3 minutes). 
+[Watch Demo](INSERT_GOOGLE_DRIVE_LINK_HERE)
 
 ## Installation Steps
 ```bash
