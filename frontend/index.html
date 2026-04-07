@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriCare - Smart Crop Disease & Market Insights</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="blob-bg">
+        <div class="blob shape1"></div>
+        <div class="blob shape2"></div>
+        <div class="blob shape3"></div>
+    </div>
+
+    <main class="container">
+        <header>
+            <div class="logo">
+                <h1>AgriCare</h1>
+                <p>AI-Powered Precision Agriculture</p>
+            </div>
+            <nav class="tabs">
+                <button class="tab-btn active" data-tab="predict-tab">Disease Predictor</button>
+                <button class="tab-btn" data-tab="suggest-tab">Crop Suggester</button>
+            </nav>
+        </header>
+
+        <section id="predict-tab" class="tab-content active glass-panel">
+            <div class="content-header">
+                <h2>Diagnostic Center</h2>
+                <p>Upload a clear image of a leaf to detect diseases.</p>
+            </div>
+
+            <form id="predict-form" class="form-grid">
+                <div class="input-group">
+                    <label for="location">Current Location</label>
+                    <input type="text" id="location" name="location" placeholder="e.g. London, Mumbasa, Delhi" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="crop-select">Crop Type</label>
+                    <div class="custom-select">
+                        <select id="crop-select" name="crop_name" required>
+                            <option value="potato">Potato</option>
+                            <option value="tomato">Tomato</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="input-group full-width">
+                    <label>Leaf Image</label>
+                    <div class="file-upload" id="drop-zone">
+                        <input type="file" id="image-upload" name="image" accept="image/*" required>
+                        <div class="upload-placeholder">
+                            <span class="icon">📸</span>
+                            <p>Click to browse or drag & drop</p>
+                        </div>
+                        <img id="image-preview" src="" alt="Preview" class="hidden">
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn full-width" id="predict-btn">
+                    <span class="btn-text">Analyze Crop Health</span>
+                    <div class="spinner hidden"></div>
+                </button>
+            </form>
+
+            <div id="predict-result" class="result-card hidden">
+                <div class="result-header">
+                    <h3>Analysis Complete</h3>
+                </div>
+                <div class="result-body">
+                    <div class="prediction-main">
+                        <span class="label">Prediction</span>
+                        <div id="disease-name" class="value highlight">Loading...</div>
+                    </div>
+                    <div class="confidence">
+                        <div class="progress-bar-container">
+                            <div id="confidence-bar" class="progress-bar"></div>
+                        </div>
+                        <span id="confidence-text">--%</span> match
+                    </div>
+                    
+                    <div class="context-cards">
+                        <div class="weather-context card">
+                            <h4>Weather Impact</h4>
+                            <div class="weather-stats">
+                                <p><span class="w-icon">🌡️</span> <span id="w-temp">--</span>°C</p>
+                                <p><span class="w-icon">💧</span> <span id="w-humidity">--</span>%</p>
+                            </div>
+                            <ul id="heuristics-list" class="heuristics">
+                                <!-- Populated by JS -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="suggest-tab" class="tab-content glass-panel hidden">
+            <div class="content-header">
+                <h2>Market & Weather Insights</h2>
+                <p>Find the most profitable crop based on your local climate.</p>
+            </div>
+
+            <form id="suggest-form" class="form-grid">
+                <div class="input-group">
+                    <label for="s-location">Current Location</label>
+                    <input type="text" id="s-location" name="location" placeholder="e.g. Bangalore" required>
+                </div>
+                
+                <button type="submit" class="submit-btn" id="suggest-btn" style="align-self: flex-end; height: 48px;">
+                    <span class="btn-text">Suggest Crop</span>
+                    <div class="spinner hidden"></div>
+                </button>
+            </form>
+
+            <div id="suggest-result" class="result-card hidden mt-2">
+                <div class="suggestion-hero">
+                    <h3>🏆 Recommended: <span id="s-crop-name" class="highlight">--</span></h3>
+                    <p id="s-reasoning" class="reasoning">...</p>
+                </div>
+                <div class="market-details">
+                    <div class="stat-pill">
+                        <span class="label">Market Demand</span>
+                        <span id="s-demand" class="value">--</span>
+                    </div>
+                    <div class="stat-pill">
+                        <span class="label">Profit Margin</span>
+                        <span id="s-profit" class="value">--</span>
+                    </div>
+                    <div class="stat-pill">
+                        <span class="label">Ideal Temp</span>
+                        <span id="s-temp-range" class="value">--</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
